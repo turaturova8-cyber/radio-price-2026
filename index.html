@@ -1,1342 +1,918 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Прайс-лист 2026 | Реклама на радио | г. Новый Уренгой</title>
-  <meta name="description"
-    content="Прайс-лист на размещение рекламы в эфире радиостанций Нового Уренгоя. Действителен с 01.03.2026 по 31.12.2026. ООО До Мажор.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --gold: #f5a623;
-      --gold2: #e8931a;
-      --dark: #0d0d1a;
-      --dark2: #14142b;
-      --card: #1a1a35;
-      --card2: #1f1f40;
-      --accent: #7c3aed;
-      --accent2: #9f5fef;
-      --text: #e8e8f5;
-      --muted: #9090b0;
-      --green: #10b981;
-      --blue: #3b82f6;
-      --border: rgba(255, 255, 255, 0.08);
-      --radius: 16px;
-      /* Package tier colors */
-      --tier-a: #10b981;
-      --tier-b: #7c3aed;
-      --tier-c: #f5a623;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--dark);
-      color: var(--text);
-      min-height: 100vh;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(135deg, #0d0d1a 0%, #1a0a3a 50%, #0d0d1a 100%);
-      padding: 60px 20px 40px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(124, 58, 237, 0.3) 0%, transparent 70%);
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(245, 166, 35, 0.15);
-      border: 1px solid rgba(245, 166, 35, 0.4);
-      color: var(--gold);
-      padding: 6px 18px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .hero h1 {
-      font-size: clamp(26px, 5vw, 52px);
-      font-weight: 800;
-      background: linear-gradient(135deg, #fff 0%, var(--gold) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      position: relative;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 15px;
-      position: relative;
-    }
-
-    .validity {
-      display: inline-flex;
-      gap: 16px;
-      margin-top: 24px;
-      flex-wrap: wrap;
-      justify-content: center;
-      position: relative;
-    }
-
-    .validity span {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 8px 16px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .validity span b {
-      color: var(--text);
-    }
-
-    /* ── NAV TABS ── */
-    .tabs {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      padding: 30px 20px 0;
-      flex-wrap: wrap;
-    }
-
-    .tab-btn {
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      padding: 10px 20px;
-      border-radius: 50px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 500;
-      transition: all 0.2s;
-      font-family: inherit;
-    }
-
-    .tab-btn:hover {
-      background: var(--card2);
-      color: var(--text);
-    }
-
-    .tab-btn.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-
-    /* ── CONTAINER ── */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px 60px;
-    }
-
-    /* ── SECTIONS ── */
-    .section {
-      display: none;
-    }
-
-    .section.active {
-      display: block;
-    }
-
-    .section-title {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 24px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-      color: var(--gold);
-    }
-
-    /* ── STATION CARDS ── */
-    .stations-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-
-    .station-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .station-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--station-color, var(--accent));
-    }
-
-    .station-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, 0.18);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-    }
-
-    .station-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-
-    .station-logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 12px;
-      object-fit: contain;
-      background: rgba(255, 255, 255, 0.07);
-      padding: 6px;
-      flex-shrink: 0;
-    }
-
-    .station-name {
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .station-freq {
-      font-size: 13px;
-      color: var(--gold);
-      font-weight: 600;
-      margin-top: 2px;
-    }
-
-    .station-info {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .info-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-      color: var(--muted);
-      background: rgba(255, 255, 255, 0.04);
-      border-radius: 8px;
-      padding: 8px 12px;
-    }
-
-    .info-row span:last-child {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .price-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #fff;
-      font-size: 15px;
-      font-weight: 700;
-      padding: 7px 16px;
-      border-radius: 8px;
-      margin-top: 14px;
-    }
-
-    /* ── PACKAGES ── */
-    .packages-intro {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px 24px;
-      margin-bottom: 28px;
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .packages-intro b {
-      color: var(--text);
-    }
-
-    /* Tier legend */
-    .tier-legend {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-
-    .tier-badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      padding: 7px 16px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .tier-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .tier-dot.a {
-      background: var(--tier-a);
-    }
-
-    .tier-dot.b {
-      background: var(--tier-b);
-    }
-
-    .tier-dot.c {
-      background: var(--tier-c);
-    }
-
-    /* Package groups */
-    .pkg-group {
-      margin-bottom: 32px;
-    }
-
-    .pkg-group-title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 14px;
-      color: var(--text);
-    }
-
-    .pkg-group-title .station-count {
-      background: var(--accent);
-      color: #fff;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 15px;
-      font-weight: 800;
-      flex-shrink: 0;
-    }
-
-    .pkg-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .pkg-card {
-      border-radius: 12px;
-      padding: 18px 20px;
-      border: 1px solid transparent;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pkg-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--tier-color);
-    }
-
-    .pkg-card.tier-a {
-      --tier-color: var(--tier-a);
-      background: rgba(16, 185, 129, 0.08);
-      border-color: rgba(16, 185, 129, 0.2);
-    }
-
-    .pkg-card.tier-b {
-      --tier-color: var(--tier-b);
-      background: rgba(124, 58, 237, 0.08);
-      border-color: rgba(124, 58, 237, 0.2);
-    }
-
-    .pkg-card.tier-c {
-      --tier-color: var(--tier-c);
-      background: rgba(245, 166, 35, 0.08);
-      border-color: rgba(245, 166, 35, 0.2);
-    }
-
-    .pkg-tier-label {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-
-    .pkg-card.tier-a .pkg-tier-label {
-      color: var(--tier-a);
-    }
-
-    .pkg-card.tier-b .pkg-tier-label {
-      color: var(--tier-b);
-    }
-
-    .pkg-card.tier-c .pkg-tier-label {
-      color: var(--tier-c);
-    }
-
-    .pkg-price-big {
-      font-size: 26px;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .pkg-card.tier-a .pkg-price-big {
-      color: var(--tier-a);
-    }
-
-    .pkg-card.tier-b .pkg-price-big {
-      color: var(--tier-b);
-    }
-
-    .pkg-card.tier-c .pkg-price-big {
-      color: var(--tier-c);
-    }
-
-    .pkg-stat {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      color: var(--muted);
-      padding: 5px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .pkg-stat:last-child {
-      border-bottom: none;
-    }
-
-    .pkg-stat span:last-child {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    /* ── POSITIONING ── */
-    .pos-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 18px;
-      margin-bottom: 40px;
-    }
-
-    .pos-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 20px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-
-    .pos-card:hover {
-      transform: translateY(-3px);
-    }
-
-    .pos-card .pos-icon {
-      font-size: 40px;
-      margin-bottom: 12px;
-    }
-
-    .pos-card .pos-title {
-      font-weight: 700;
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-
-    .pos-card .pos-pct {
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-
-    .pos-card .pos-desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* ── PRODUCTION ── */
-    .production-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 18px;
-      margin-bottom: 40px;
-    }
-
-    .prod-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-
-    .prod-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(255, 255, 255, 0.15);
-    }
-
-    .prod-card h3 {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .prod-card p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.65;
-      margin-bottom: 10px;
-    }
-
-    .prod-card .example {
-      font-size: 12px;
-      color: var(--accent2);
-      font-style: italic;
-      margin-bottom: 12px;
-      padding: 8px 12px;
-      background: rgba(124, 58, 237, 0.08);
-      border-radius: 8px;
-      border-left: 3px solid var(--accent);
-    }
-
-    .prod-card .prod-price {
-      font-weight: 700;
-      color: var(--green);
-      font-size: 16px;
-    }
-
-    /* ── CALCULATOR (footer section) ── */
-    .calc-wrapper {
-      background: var(--dark2);
-      border-top: 1px solid var(--border);
-      padding: 50px 20px 60px;
-    }
-
-    .calc-inner {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .calc-header {
-      text-align: center;
-      margin-bottom: 32px;
-    }
-
-    .calc-header h2 {
-      font-size: clamp(20px, 3vw, 28px);
-      font-weight: 800;
-      background: linear-gradient(135deg, #fff, var(--gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 8px;
-    }
-
-    .calc-header p {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .calc-card {
-      background: var(--card);
-      border: 1px solid rgba(124, 58, 237, 0.3);
-      border-radius: var(--radius);
-      padding: 32px;
-    }
-
-    .calc-group {
-      margin-bottom: 20px;
-    }
-
-    .calc-group label {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--muted);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-    }
-
-    .calc-group select,
-    .calc-group input[type=number] {
-      width: 100%;
-      background: var(--dark2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      color: var(--text);
-      font-size: 15px;
-      font-family: inherit;
-      padding: 12px 16px;
-      outline: none;
-      transition: border-color 0.2s;
-      -webkit-appearance: none;
-      appearance: none;
-    }
-
-    .calc-group select:focus,
-    .calc-group input[type=number]:focus {
-      border-color: var(--accent);
-    }
-
-    .calc-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 16px;
-    }
-
-    .calc-actions {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .calc-btn {
-      width: 100%;
-      padding: 15px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #fff;
-      font-size: 16px;
-      font-weight: 700;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      font-family: inherit;
-      transition: opacity 0.2s, transform 0.15s;
-      letter-spacing: 0.3px;
-    }
-
-    .calc-btn.btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      width: auto;
-      padding-left: 25px;
-      padding-right: 25px;
-    }
-
-    .calc-btn:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
-
-    .calc-btn.btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--text);
-      border-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .calc-btn:active {
-      transform: translateY(0);
-    }
-
-    .calc-result {
-      margin-top: 24px;
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(124, 58, 237, 0.08));
-      border: 1px solid rgba(16, 185, 129, 0.25);
-      border-radius: 12px;
-      padding: 24px;
-      display: none;
-    }
-
-    .calc-result.show {
-      display: block;
-    }
-
-    .result-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    .result-item {
-      text-align: center;
-    }
-
-    .result-item .r-label {
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .result-item .r-value {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--gold);
-    }
-
-    .result-item.highlight .r-value {
-      font-size: 24px;
-      color: var(--green);
-    }
-
-    .result-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 16px 0;
-    }
-
-    .result-note {
-      font-size: 12px;
-      color: var(--muted);
-      text-align: center;
-      margin-top: 12px;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #0a0a16;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 30px 20px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    footer b {
-      color: var(--text);
-    }
-
-    footer .contacts {
-      display: flex;
-      gap: 24px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-
-    footer .contacts a {
-      color: var(--gold);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    footer .contacts a:hover {
-      text-decoration: underline;
-    }
-
-    /* ── STATION COLORS ── */
-    .rr {
-      --station-color: #e63946;
-    }
-
-    .dacha {
-      --station-color: #2ecc71;
-    }
-
-    .love {
-      --station-color: #e84393;
-    }
-
-    .hit {
-      --station-color: #3498db;
-    }
-
-    .retro {
-      --station-color: #f39c12;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .pkg-cards {
-        grid-template-columns: 1fr;
-      }
-
-      .calc-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .result-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .calc-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .calc-card {
-        padding: 20px;
-      }
-
-      .pos-cards {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прайс-лист 2026: Пакеты услуг</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --glass-bg: rgba(15, 23, 42, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --color-a: #60a5fa; /* Базовый */
+            --color-b: #34d399; /* Оптимальный */
+            --color-c: #a78bfa; /* Максимум */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Waves */
+        .waves-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #0b0f19 80%);
+        }
+        
+        .wave {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            border-radius: 50%;
+            animation: ripple 12s infinite linear;
+            box-shadow: 0 0 50px rgba(99, 102, 241, 0.05) inset;
+        }
+        
+        .wave:nth-child(1) { width: 300px; height: 300px; animation-delay: 0s; }
+        .wave:nth-child(2) { width: 600px; height: 600px; animation-delay: 3s; }
+        .wave:nth-child(3) { width: 900px; height: 900px; animation-delay: 6s; }
+        .wave:nth-child(4) { width: 1200px; height: 1200px; animation-delay: 9s; }
+        
+        @keyframes ripple {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.8rem;
+            text-align: center;
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
+        /* Glassmorphism Classes */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .glass:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        /* Sections */
+        .section-title {
+            font-size: 1.8rem;
+            margin-top: 70px;
+            margin-bottom: 30px;
+            border-left: 4px solid #6366f1;
+            padding-left: 15px;
+            display: inline-block;
+        }
+
+        /* Radio Stations Grid */
+        .radio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .radio-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 25px 15px;
+        }
+        .radio-logo-wrap {
+            width: 110px;
+            height: 110px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 25px rgba(255,255,255,0.1);
+            overflow: hidden;
+        }
+        .radio-logo-wrap img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+        }
+        .radio-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+            color: #f8fafc;
+        }
+        .radio-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+        .price-tag {
+            margin-top: 15px;
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.15);
+            padding: 6px 15px;
+            border-radius: 20px;
+            color: #818cf8;
+            font-weight: 600;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        /* Packages Grid */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .package-card {
+            position: relative;
+            padding: 25px;
+        }
+        .package-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #e2e8f0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .p-tier {
+            margin-bottom: 15px;
+            padding: 18px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.03);
+            border-left: 4px solid transparent;
+            transition: background 0.2s;
+        }
+        .p-tier:hover {
+            background: rgba(255,255,255,0.05);
+        }
+        .p-tier:last-child { margin-bottom: 0; }
+        
+        .p-tier.tier-a { border-color: var(--color-a); }
+        .p-tier.tier-b { border-color: var(--color-b); }
+        .p-tier.tier-c { border-color: var(--color-c); }
+        
+        .tier-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .tier-name {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+        }
+        .tier-a .tier-name { color: var(--color-a); }
+        .tier-b .tier-name { color: var(--color-b); }
+        .tier-c .tier-name { color: var(--color-c); }
+
+        .tier-price {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        .tier-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Production List */
+        .prod-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .prod-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .prod-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .prod-info {
+            max-width: 75%;
+        }
+        .prod-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 5px;
+        }
+        .prod-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .prod-example {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #7dd3fc;
+            margin-top: 8px;
+            background: rgba(125, 211, 252, 0.1);
+            padding: 8px 12px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+        .prod-price {
+            font-weight: 800;
+            color: #34d399;
+            font-size: 1.15rem;
+            white-space: nowrap;
+            background: rgba(52, 211, 153, 0.1);
+            padding: 5px 12px;
+            border-radius: 6px;
+        }
+
+        /* Callout Box */
+        .cost-modifiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .callout {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .callout:hover {
+            transform: translateY(-3px);
+            background: rgba(99, 102, 241, 0.15);
+        }
+        .callout-label {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+        .callout-val {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #a78bfa;
+        }
+
+        /* Calculator Main Body */
+        .calc-section {
+            padding: 40px;
+            margin-top: 60px;
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            box-shadow: 0 0 40px rgba(139, 92, 246, 0.1);
+        }
+        .calc-header-title {
+            font-size: 2rem;
+            color: #c4b5fd;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .calc-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .form-group label {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            font-weight: 600;
+        }
+        input, select {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--glass-border);
+            color: #fff;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        input:focus, select:focus {
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+        }
+        .calc-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+            opacity: 0.95;
+        }
+        .btn-danger {
+            background: rgba(239, 68, 68, 0.1);
+            color: #fca5a5;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        .btn-danger:hover {
+            background: rgba(239, 68, 68, 0.25);
+            box-shadow: none;
+            color: #fecaca;
+        }
+
+        /* Calc Memory Content */
+        .memory-wrap {
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            padding: 20px;
+            min-height: 100px;
+        }
+        .memory-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 10px;
+        }
+        .memory-list {
+            max-height: 250px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .memory-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.04);
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 3px solid #6366f1;
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .memory-item-desc {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+        .memory-item-desc strong {
+            color: #fff;
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 3px;
+        }
+        .memory-item-price {
+            font-weight: 800;
+            color: #34d399;
+            font-size: 1.2rem;
+            background: rgba(52,211,153,0.1);
+            padding: 5px 15px;
+            border-radius: 6px;
+        }
+
+        .calc-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px dashed rgba(255,255,255,0.1);
+        }
+        .total-label {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .total-sum {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #34d399, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Company Info */
+        .company-info {
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 30px;
+            line-height: 1.8;
+        }
+        .company-info strong {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .memory-item { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .calc-actions { flex-direction: column; }
+            .btn { width: 100%; }
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- ══ HERO ══ -->
-  <div class="hero">
-    <div class="hero-badge">📻 Реклама на радио • г. Новый Уренгой, ЯНАО</div>
-    <h1>Прайс-лист 2026</h1>
-    <p>Пакеты услуг по размещению рекламы в эфире радиостанций</p>
-    <div class="validity">
-      <span>Действителен: <b>01.03.2026 — 31.12.2026</b></span>
-      <span>Территория: <b>г. Новый Уренгой</b></span>
-      <span>Без НДС</span>
-      <span>ООО «До Мажор»</span>
-    </div>
-  </div>
-
-  <!-- ══ TABS ══ -->
-  <div class="tabs">
-    <button class="tab-btn active" onclick="showTab('stations', this)">📡 Радиостанции</button>
-    <button class="tab-btn" onclick="showTab('packages', this)">📦 Пакеты</button>
-    <button class="tab-btn" onclick="showTab('positioning', this)">🏆 Позиционирование</button>
-    <button class="tab-btn" onclick="showTab('production', this)">🎙️ Производство</button>
-  </div>
-
-  <div class="container">
-
-    <!-- ══ SECTION: STATIONS ══ -->
-    <div class="section active" id="tab-stations">
-      <div class="section-title">📡 Трансляции рекламного ролика — 6 руб. за 1 секунду</div>
-      <div class="stations-grid">
-
-        <div class="station-card rr">
-          <div class="station-header">
-            <img class="station-logo" src="logo/RR.png" alt="Русское Радио">
-            <div>
-              <div class="station-name">Русское Радио</div>
-              <div class="station-freq">103.3 FM</div>
-            </div>
-          </div>
-          <div class="station-info">
-            <div class="info-row"><span>Выход в эфир</span><span>в :10 и :50 каждого часа</span></div>
-            <div class="info-row"><span>Вещание</span><span>07:00 — 24:00</span></div>
-            <div class="info-row"><span>Выходов в день</span><span>≈ 34 раза</span></div>
-            <div class="info-row"><span>Тариф</span><span>6 руб / сек</span></div>
-          </div>
-          <div class="price-badge">6 ₽ / сек</div>
-        </div>
-
-        <div class="station-card dacha">
-          <div class="station-header">
-            <img class="station-logo" src="logo/дача.jpg" alt="Радио Дача">
-            <div>
-              <div class="station-name">Радио Дача</div>
-              <div class="station-freq">104.4 FM</div>
-            </div>
-          </div>
-          <div class="station-info">
-            <div class="info-row"><span>Выход в эфир</span><span>в :20 и :35 каждого часа</span></div>
-            <div class="info-row"><span>Вещание</span><span>07:00 — 24:00</span></div>
-            <div class="info-row"><span>Выходов в день</span><span>≈ 34 раза</span></div>
-            <div class="info-row"><span>Тариф</span><span>6 руб / сек</span></div>
-          </div>
-          <div class="price-badge">6 ₽ / сек</div>
-        </div>
-
-        <div class="station-card love">
-          <div class="station-header">
-            <img class="station-logo" src="logo/Love.png" alt="Love Radio">
-            <div>
-              <div class="station-name">Love Radio</div>
-              <div class="station-freq">106.9 FM</div>
-            </div>
-          </div>
-          <div class="station-info">
-            <div class="info-row"><span>Выход в эфир</span><span>в :20 и :35 каждого часа</span></div>
-            <div class="info-row"><span>Вещание</span><span>07:00 — 24:00</span></div>
-            <div class="info-row"><span>Выходов в день</span><span>≈ 34 раза</span></div>
-            <div class="info-row"><span>Тариф</span><span>6 руб / сек</span></div>
-          </div>
-          <div class="price-badge">6 ₽ / сек</div>
-        </div>
-
-        <div class="station-card hit">
-          <div class="station-header">
-            <img class="station-logo" src="logo/Hit FM.png" alt="Хит FM">
-            <div>
-              <div class="station-name">Хит FM</div>
-              <div class="station-freq">101.8 FM</div>
-            </div>
-          </div>
-          <div class="station-info">
-            <div class="info-row"><span>Выход в эфир</span><span>в :10 и :50 каждого часа</span></div>
-            <div class="info-row"><span>Вещание</span><span>07:00 — 24:00</span></div>
-            <div class="info-row"><span>Выходов в день</span><span>≈ 34 раза</span></div>
-            <div class="info-row"><span>Тариф</span><span>6 руб / сек</span></div>
-          </div>
-          <div class="price-badge">6 ₽ / сек</div>
-        </div>
-
-        <div class="station-card retro">
-          <div class="station-header">
-            <img class="station-logo" src="logo/ретро.jpg" alt="Ретро FM">
-            <div>
-              <div class="station-name">Ретро FM</div>
-              <div class="station-freq">87.8 FM</div>
-            </div>
-          </div>
-          <div class="station-info">
-            <div class="info-row"><span>Выход в эфир</span><span>в :40 и :55 каждого часа</span></div>
-            <div class="info-row"><span>Вещание</span><span>07:00 — 24:00</span></div>
-            <div class="info-row"><span>Выходов в день</span><span>≈ 34 раза</span></div>
-            <div class="info-row"><span>Тариф</span><span>6 руб / сек</span></div>
-          </div>
-          <div class="price-badge">6 ₽ / сек</div>
-        </div>
-
-      </div>
+    <div class="waves-bg">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
     </div>
 
-    <!-- ══ SECTION: PACKAGES ══ -->
-    <div class="section" id="tab-packages">
-      <div class="section-title">📦 Пакетное размещение — Хронометраж ролика 20–30 сек.</div>
+    <div class="container">
+        
+        <header>
+            <h1>Прайс-лист 2026: Пакеты услуг</h1>
+            <p class="subtitle">Услуги по размещению рекламы в эфире радиостанций | Новый Уренгой<br/>
+            Действителен с 01.03.2026 по 31.12.2026
+            </p>
+        </header>
 
-      <div class="packages-intro">
-        Выберите <b>количество радиостанций</b> и подходящий тариф. Чем больше станций — тем шире охват аудитории.
-        Хронометраж аудиоролика: <b>20–30 секунд</b>.
-      </div>
-
-      <div class="tier-legend">
-        <div class="tier-badge">
-          <div class="tier-dot a"></div> Тариф А — Базовый (6 выходов/день)
-        </div>
-        <div class="tier-badge">
-          <div class="tier-dot b"></div> Тариф Б — Плюс (10 выходов/день)
-        </div>
-        <div class="tier-badge">
-          <div class="tier-dot c"></div> Тариф С — Максимум (15 выходов/день)
-        </div>
-      </div>
-
-      <!-- 1 станция -->
-      <div class="pkg-group">
-        <div class="pkg-group-title">
-          <div class="station-count">1</div>
-          Любая 1 радиостанция
-        </div>
-        <div class="pkg-cards">
-          <div class="pkg-card tier-a">
-            <div class="pkg-tier-label">Тариф А — Базовый</div>
-            <div class="pkg-price-big">10 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>6 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>180 раз</span></div>
-          </div>
-          <div class="pkg-card tier-b">
-            <div class="pkg-tier-label">Тариф Б — Плюс</div>
-            <div class="pkg-price-big">15 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>10 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>300 раз</span></div>
-          </div>
-          <div class="pkg-card tier-c">
-            <div class="pkg-tier-label">Тариф С — Максимум</div>
-            <div class="pkg-price-big">20 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>15 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>450 раз</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2 станции -->
-      <div class="pkg-group">
-        <div class="pkg-group-title">
-          <div class="station-count">2</div>
-          Любые 2 радиостанции
-        </div>
-        <div class="pkg-cards">
-          <div class="pkg-card tier-a">
-            <div class="pkg-tier-label">Тариф А — Базовый</div>
-            <div class="pkg-price-big">15 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>6 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>360 раз</span></div>
-          </div>
-          <div class="pkg-card tier-b">
-            <div class="pkg-tier-label">Тариф Б — Плюс</div>
-            <div class="pkg-price-big">25 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>10 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>600 раз</span></div>
-          </div>
-          <div class="pkg-card tier-c">
-            <div class="pkg-tier-label">Тариф С — Максимум</div>
-            <div class="pkg-price-big">40 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>15 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>900 раз</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3 станции -->
-      <div class="pkg-group">
-        <div class="pkg-group-title">
-          <div class="station-count">3</div>
-          Любые 3 радиостанции
-        </div>
-        <div class="pkg-cards">
-          <div class="pkg-card tier-a">
-            <div class="pkg-tier-label">Тариф А — Базовый</div>
-            <div class="pkg-price-big">20 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>6 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>540 раз</span></div>
-          </div>
-          <div class="pkg-card tier-b">
-            <div class="pkg-tier-label">Тариф Б — Плюс</div>
-            <div class="pkg-price-big">35 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>10 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>900 раз</span></div>
-          </div>
-          <div class="pkg-card tier-c">
-            <div class="pkg-tier-label">Тариф С — Максимум</div>
-            <div class="pkg-price-big">60 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>15 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>1 350 раз</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4 станции -->
-      <div class="pkg-group">
-        <div class="pkg-group-title">
-          <div class="station-count">4</div>
-          Любые 4 радиостанции
-        </div>
-        <div class="pkg-cards">
-          <div class="pkg-card tier-a">
-            <div class="pkg-tier-label">Тариф А — Базовый</div>
-            <div class="pkg-price-big">30 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>6 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>720 раз</span></div>
-          </div>
-          <div class="pkg-card tier-b">
-            <div class="pkg-tier-label">Тариф Б — Плюс</div>
-            <div class="pkg-price-big">45 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>10 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>1 200 раз</span></div>
-          </div>
-          <div class="pkg-card tier-c">
-            <div class="pkg-tier-label">Тариф С — Максимум</div>
-            <div class="pkg-price-big">80 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>15 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>1 800 раз</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5 станций -->
-      <div class="pkg-group">
-        <div class="pkg-group-title">
-          <div class="station-count">5</div>
-          Все 5 радиостанций
-        </div>
-        <div class="pkg-cards">
-          <div class="pkg-card tier-a">
-            <div class="pkg-tier-label">Тариф А — Базовый</div>
-            <div class="pkg-price-big">40 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>6 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>900 раз</span></div>
-          </div>
-          <div class="pkg-card tier-b">
-            <div class="pkg-tier-label">Тариф Б — Плюс</div>
-            <div class="pkg-price-big">55 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>10 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>1 500 раз</span></div>
-          </div>
-          <div class="pkg-card tier-c">
-            <div class="pkg-tier-label">Тариф С — Максимум</div>
-            <div class="pkg-price-big">100 000 ₽</div>
-            <div class="pkg-stat"><span>Выходов в день</span><span>15 раз</span></div>
-            <div class="pkg-stat"><span>Выходов в месяц</span><span>2 250 раз</span></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ══ SECTION: POSITIONING ══ -->
-    <div class="section" id="tab-positioning">
-      <div class="section-title">🏆 Стоимость позиционирования в рекламном блоке</div>
-      <div class="pos-cards">
-        <div class="pos-card">
-          <div class="pos-icon">🥇</div>
-          <div class="pos-title">Первое место</div>
-          <div class="pos-pct">+20%</div>
-          <div class="pos-desc">Первый ролик в блоке — максимальное внимание слушателя. Аудитория ещё не переключилась.
-          </div>
-        </div>
-        <div class="pos-card">
-          <div class="pos-icon">🥈</div>
-          <div class="pos-title">Второе место</div>
-          <div class="pos-pct">+15%</div>
-          <div class="pos-desc">Высокая запоминаемость — слушатель уже настроен на восприятие рекламы.</div>
-        </div>
-        <div class="pos-card">
-          <div class="pos-icon">🏁</div>
-          <div class="pos-title">Последнее место</div>
-          <div class="pos-pct">+10%</div>
-          <div class="pos-desc">Ролик слышат перед возвратом в эфир — эффект «последнего слова» в памяти.</div>
-        </div>
-      </div>
-      <div class="packages-intro">
-        <b>Как рассчитывается надбавка?</b> Надбавка за позицию начисляется на итоговую стоимость размещения.
-        Например, при стоимости 10 000 ₽ и первом месте: 10 000 × 1.20 = <b>12 000 ₽</b>.
-      </div>
-    </div>
-
-    <!-- ══ SECTION: PRODUCTION ══ -->
-    <div class="section" id="tab-production">
-      <div class="section-title">🎙️ Производство рекламных аудиоматериалов</div>
-      <div class="production-grid">
-
-        <div class="prod-card">
-          <h3>🎤 Информационный ролик</h3>
-          <p>Классический формат — донести конкретную информацию до слушателя: акция, новинка, адрес, скидка. Чёткий,
-            разборчивый текст и динамичный темп.</p>
-          <div class="example">«Только в мае! Скидка 20% на всё. Ждём вас по адресу…»</div>
-          <div class="prod-price">от 3 000 ₽</div>
-        </div>
-
-        <div class="prod-card">
-          <h3>🎭 Сюжетно-ролевой ролик</h3>
-          <p>Постановочный мини-спектакль с актёрами: диалоги, персонажи, жизненные ситуации. Вызывает эмоции и доверие
-            через узнаваемые сцены.</p>
-          <div class="example">Разговор двух подруг о том, где купить товар выгоднее…</div>
-          <div class="prod-price">от 4 000 ₽</div>
-        </div>
-
-        <div class="prod-card">
-          <h3>✨ Имиджевый ролик</h3>
-          <p>Атмосферный, эмоциональный формат для создания образа бренда. Упор на качественный голос, музыку и
-            настроение: престиж, надёжность, забота.</p>
-          <div class="example">«Доверие — вот что главное. Банк, в котором вас понимают»</div>
-          <div class="prod-price">от 4 000 ₽</div>
-        </div>
-
-        <div class="prod-card">
-          <h3>🎵 Музыкальный ролик-песня</h3>
-          <p>Запоминающаяся мелодия с наложенным текстом о продукте. Создаёт стойкие ассоциации через музыку и ритм.</p>
-          <div class="example">Фирменные джинглы, которые «поют» в голове слушателей!</div>
-          <div class="prod-price">от 10 000 ₽</div>
-        </div>
-
-        <div class="prod-card">
-          <h3>⚡ Блиц-ролик</h3>
-          <p>Сверхкороткий (5–10 сек.) «вспышка» с одним ключевым сообщением: акция, скидка, призыв к действию. Идеален
-            для плотного эфира.</p>
-          <div class="example">Фирменная отбивка «Русское Радио — Всё будет хорошо!»</div>
-          <div class="prod-price">от 3 000 ₽</div>
-        </div>
-
-        <div class="prod-card">
-          <h3>🎼 Джингл / Заставка</h3>
-          <p>Короткий фирменный мотив (5–7 сек.) с запоминающимся слоганом. «Визитная карточка» бренда в эфире или
-            промо.</p>
-          <div class="example">«Просто добавь воды…» — культовая реклама 90-х Yupi</div>
-          <div class="prod-price">от 4 000 ₽</div>
-        </div>
-
-        <div class="prod-card">
-          <h3>✂️ Адаптация ролика</h3>
-          <p>Доработка уже существующего ролика под формат, длительность или требования радиостанции. Перемонтаж, замена
-            голоса, изменение хронометража.</p>
-          <div class="example">Адаптация под другой хронометраж или другую станцию</div>
-          <div class="prod-price">50% от тарифа исходного типа</div>
-        </div>
-
-      </div>
-    </div>
-
-  </div><!-- /container -->
-
-  <!-- ══ CALCULATOR (FOOTER SECTION) ══ -->
-  <div class="calc-wrapper">
-    <div class="calc-inner">
-      <div class="calc-header">
-        <h2>🧮 Калькулятор стоимости рекламы</h2>
-        <p>Рассчитайте стоимость размещения под ваши параметры</p>
-      </div>
-
-      <div class="calc-card">
-        <div class="calc-group">
-          <label>Радиостанция</label>
-          <select id="calc-station">
-            <option value="">— Выберите станцию —</option>
-            <option value="rr">Русское Радио 103.3 FM</option>
-            <option value="dacha">Радио Дача 104.4 FM</option>
-            <option value="love">Love Radio 106.9 FM</option>
-            <option value="hit">Хит FM 101.8 FM</option>
-            <option value="retro">Ретро FM 87.8 FM</option>
-          </select>
-        </div>
-
-        <div class="calc-group">
-          <label>Хронометраж ролика (секунд) — 1 сек = 6 ₽</label>
-          <input type="number" id="calc-duration" value="30" min="5" max="120" placeholder="Например: 30">
-        </div>
-
-        <div class="calc-grid">
-          <div class="calc-group">
-            <label>Выходов в день</label>
-            <input type="number" id="calc-per-day" value="6" min="1" max="50">
-          </div>
-          <div class="calc-group">
-            <label>Дней в месяце</label>
-            <input type="number" id="calc-days" value="30" min="1" max="31">
-          </div>
-          <div class="calc-group">
-            <label>Позиция в блоке</label>
-            <select id="calc-position">
-              <option value="0">Без надбавки</option>
-              <option value="0.20">1-е место (+20%)</option>
-              <option value="0.15">2-е место (+15%)</option>
-              <option value="0.10">Последнее (+10%)</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="calc-actions">
-          <button class="calc-btn" onclick="calculate()">Рассчитать стоимость →</button>
-          <button class="calc-btn btn-secondary" onclick="resetCalc()" title="Сбросить все значения">🔄 Сброс</button>
-        </div>
-
-        <div class="calc-result" id="calc-result">
-          <div class="result-grid">
-            <div class="result-item">
-              <div class="r-label">Стоимость 1 выхода</div>
-              <div class="r-value" id="res-one">—</div>
+        <h2 class="section-title">Радиостанции</h2>
+        <div class="radio-grid">
+            <div class="glass radio-card">
+                <div class="radio-logo-wrap">
+                    <img src="logo/RR.png" alt="Русское Радио">
+                </div>
+                <h3>Русское Радио</h3>
+                <p>103,3 FM</p>
+                <p>Выходы: 10 и 50 мин.</p>
+                <p>Время: 07:00 - 24:00</p>
+                <div class="price-tag">6 ₽ / сек</div>
             </div>
-            <div class="result-item">
-              <div class="r-label">Выходов в месяц</div>
-              <div class="r-value" id="res-count">—</div>
+            
+            <div class="glass radio-card">
+                <div class="radio-logo-wrap">
+                    <img src="logo/дача.jpg" alt="Радио Дача">
+                </div>
+                <h3>Радио Дача</h3>
+                <p>104,4 FM</p>
+                <p>Выходы: 20 и 35 мин.</p>
+                <p>Время: 07:00 - 24:00</p>
+                <div class="price-tag">6 ₽ / сек</div>
             </div>
-            <div class="result-item">
-              <div class="r-label">Стоимость в день</div>
-              <div class="r-value" id="res-day">—</div>
+
+            <div class="glass radio-card">
+                <div class="radio-logo-wrap">
+                    <img src="logo/Love.png" alt="LOVE radio">
+                </div>
+                <h3>LOVE radio</h3>
+                <p>106,9 FM</p>
+                <p>Выходы: 20 и 35 мин.</p>
+                <p>Время: 07:00 - 24:00</p>
+                <div class="price-tag">6 ₽ / сек</div>
             </div>
-            <div class="result-item highlight">
-              <div class="r-label">💰 Итого в месяц</div>
-              <div class="r-value" id="res-total">—</div>
+
+            <div class="glass radio-card">
+                <div class="radio-logo-wrap">
+                    <img src="logo/Hit FM.png" alt="Хит ФМ">
+                </div>
+                <h3>Хит ФМ</h3>
+                <p>101,8 FM</p>
+                <p>Выходы: 10 и 50 мин.</p>
+                <p>Время: 07:00 - 24:00</p>
+                <div class="price-tag">6 ₽ / сек</div>
             </div>
-          </div>
-          <div class="result-note" id="res-note"></div>
+
+            <div class="glass radio-card">
+                <div class="radio-logo-wrap">
+                    <img src="logo/ретро.jpg" alt="Ретро ФМ">
+                </div>
+                <h3>Ретро ФМ</h3>
+                <p>87,8 FM</p>
+                <p>Выходы: 40 и 55 мин.</p>
+                <p>Время: 07:00 - 24:00</p>
+                <div class="price-tag">6 ₽ / сек</div>
+            </div>
         </div>
-      </div>
+
+        <h2 class="section-title">Пакетное размещение</h2>
+        <p style="color:var(--text-muted); margin-bottom: 30px;">Хронометраж аудио ролика 20-30 сек. Цены без НДС.</p>
+        
+        <div class="packages-grid">
+            <!-- 1 Channel -->
+            <div class="glass package-card">
+                <div class="package-title">1 Радиоканал</div>
+                
+                <div class="p-tier tier-a">
+                    <div class="tier-header">
+                        <span class="tier-name">а. Базовый</span>
+                        <span class="tier-price">10 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">6 выходов в день / 180 в месяц</div>
+                </div>
+                <div class="p-tier tier-b">
+                    <div class="tier-header">
+                        <span class="tier-name">б. Оптимальный</span>
+                        <span class="tier-price">15 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">10 выходов в день / 300 в месяц</div>
+                </div>
+                <div class="p-tier tier-c">
+                    <div class="tier-header">
+                        <span class="tier-name">с. Максимум</span>
+                        <span class="tier-price">20 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">15 выходов в день / 450 в месяц</div>
+                </div>
+            </div>
+
+            <!-- 2 Channels -->
+            <div class="glass package-card">
+                <div class="package-title">2 Радиоканала</div>
+                
+                <div class="p-tier tier-a">
+                    <div class="tier-header">
+                        <span class="tier-name">а. Базовый</span>
+                        <span class="tier-price">15 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">6 выходов в день / 360 в месяц</div>
+                </div>
+                <div class="p-tier tier-b">
+                    <div class="tier-header">
+                        <span class="tier-name">б. Оптимальный</span>
+                        <span class="tier-price">25 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">10 выходов в день / 600 в месяц</div>
+                </div>
+                <div class="p-tier tier-c">
+                    <div class="tier-header">
+                        <span class="tier-name">с. Максимум</span>
+                        <span class="tier-price">40 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">15 выходов в день / 500 в месяц</div>
+                </div>
+            </div>
+
+            <!-- 3 Channels -->
+            <div class="glass package-card">
+                <div class="package-title">3 Радиоканала</div>
+                
+                <div class="p-tier tier-a">
+                    <div class="tier-header">
+                        <span class="tier-name">а. Базовый</span>
+                        <span class="tier-price">20 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">6 выходов в день / 540 в месяц</div>
+                </div>
+                <div class="p-tier tier-b">
+                    <div class="tier-header">
+                        <span class="tier-name">б. Оптимальный</span>
+                        <span class="tier-price">35 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">10 выходов в день / 900 в месяц</div>
+                </div>
+                <div class="p-tier tier-c">
+                    <div class="tier-header">
+                        <span class="tier-name">с. Максимум</span>
+                        <span class="tier-price">60 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">15 выходов в день / 1350 в месяц</div>
+                </div>
+            </div>
+
+            <!-- 4 Channels -->
+            <div class="glass package-card">
+                <div class="package-title">4 Радиоканала</div>
+                
+                <div class="p-tier tier-a">
+                    <div class="tier-header">
+                        <span class="tier-name">а. Базовый</span>
+                        <span class="tier-price">30 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">6 выходов в день / 720 в месяц</div>
+                </div>
+                <div class="p-tier tier-b">
+                    <div class="tier-header">
+                        <span class="tier-name">б. Оптимальный</span>
+                        <span class="tier-price">45 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">10 выходов в день / 1200 в месяц</div>
+                </div>
+                <div class="p-tier tier-c">
+                    <div class="tier-header">
+                        <span class="tier-name">с. Максимум</span>
+                        <span class="tier-price">80 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">15 выходов в день / 1800 в месяц</div>
+                </div>
+            </div>
+
+            <!-- 5 Channels -->
+            <div class="glass package-card">
+                <div class="package-title">5 Радиоканалов</div>
+                
+                <div class="p-tier tier-a">
+                    <div class="tier-header">
+                        <span class="tier-name">а. Базовый</span>
+                        <span class="tier-price">40 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">6 выходов в день / 900 в месяц</div>
+                </div>
+                <div class="p-tier tier-b">
+                    <div class="tier-header">
+                        <span class="tier-name">б. Оптимальный</span>
+                        <span class="tier-price">55 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">10 выходов в день / 1500 в месяц</div>
+                </div>
+                <div class="p-tier tier-c">
+                    <div class="tier-header">
+                        <span class="tier-name">с. Максимум</span>
+                        <span class="tier-price">100 000 ₽</span>
+                    </div>
+                    <div class="tier-desc">15 выходов в день / 2250 в месяц</div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Производство аудиоматериалов</h2>
+        <div class="glass">
+            <div class="prod-list">
+                <div class="prod-item">
+                    <div class="prod-info">
+                        <div class="prod-name">1. Информационный ролик</div>
+                        <div class="prod-desc">Классический формат, цель которого - донести конкретную информацию до слушателя. Отличается четким, разборчивым текстом и динамичным темпом.</div>
+                        <div class="prod-example">Пример: «Только в мае! Скидка 20% на всё. Ждем вас по адресу...»</div>
+                    </div>
+                    <div class="prod-price">от 3 000 ₽</div>
+                </div>
+                <div class="prod-item">
+                    <div class="prod-info">
+                        <div class="prod-name">2. Имиджевый ролик</div>
+                        <div class="prod-desc">Атмосферный, эмоциональный формат, направленный на создание образа бренда. Делает упор на качественный голос и музыку.</div>
+                        <div class="prod-example">Пример: «Доверие — вот что главное. Банк, в котором вас понимают».</div>
+                    </div>
+                    <div class="prod-price">от 4 000 ₽</div>
+                </div>
+                <div class="prod-item">
+                    <div class="prod-info">
+                        <div class="prod-name">3. Музыкальный ролик – песня</div>
+                        <div class="prod-desc">Запоминающаяся мелодия с наложенным текстом о продукте. Создает ассоциации через музыку и ритм.</div>
+                    </div>
+                    <div class="prod-price">от 10 000 ₽</div>
+                </div>
+                <div class="prod-item">
+                    <div class="prod-info">
+                        <div class="prod-name">4. Блиц-ролик</div>
+                        <div class="prod-desc">Сверхкороткий (5–10 сек.) «вспышка» с одним ключевым сообщением. Для плотного эфира и быстрого воздействия.</div>
+                        <div class="prod-example">Пример: фирменная отбивка «Русское Радио – Все будет хорошо!»</div>
+                    </div>
+                    <div class="prod-price">от 3 000 ₽</div>
+                </div>
+                <div class="prod-item">
+                    <div class="prod-info">
+                        <div class="prod-name">5. Джингл (музыкальная заставка, слоган)</div>
+                        <div class="prod-desc">Короткий фирменный мотив (5–7 сек.) с запоминающимся слоганом. Используется как «визитная карточка» бренда.</div>
+                        <div class="prod-example">Пример: реклама Yupi – «Просто добавь воды...»</div>
+                    </div>
+                    <div class="prod-price">от 4 000 ₽</div>
+                </div>
+                <div class="prod-item">
+                    <div class="prod-info">
+                        <div class="prod-name">6. Адаптация ролика</div>
+                        <div class="prod-desc">Процесс доработки существующего аудиоролика.</div>
+                    </div>
+                    <div class="prod-price">50% от тарифа</div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Стоимость позиционирования</h2>
+        <div class="cost-modifiers">
+            <div class="callout">
+                <div class="callout-label">Первое место в рекламном блоке</div>
+                <div class="callout-val">+ 20%</div>
+            </div>
+            <div class="callout">
+                <div class="callout-label">Второе место в рекламном блоке</div>
+                <div class="callout-val">+ 15%</div>
+            </div>
+            <div class="callout">
+                <div class="callout-label">Последнее место в рекламном блоке</div>
+                <div class="callout-val">+ 10%</div>
+            </div>
+        </div>
+
+        <!-- Калькулятор -->
+        <h2 class="section-title">Калькулятор расчета стоимости</h2>
+        <div class="glass calc-section">
+            <h3 class="calc-header-title">Расчет стоимости рекламы</h3>
+            
+            <div class="calc-form">
+                <div class="form-group">
+                    <label for="c-radio">Радиостанция</label>
+                    <select id="c-radio">
+                        <option value="Русское Радио">Русское Радио</option>
+                        <option value="Радио Дача">Радио Дача</option>
+                        <option value="LOVE radio">LOVE radio</option>
+                        <option value="Хит ФМ">Хит ФМ</option>
+                        <option value="Ретро ФМ">Ретро ФМ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="c-time">Хронометраж (секунд)</label>
+                    <input type="number" id="c-time" placeholder="20" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="c-runs">Кол-во выходов в день</label>
+                    <input type="number" id="c-runs" placeholder="6" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="c-days">Кол-во дней (месяцев)</label>
+                    <input type="number" id="c-days" placeholder="30" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="c-pos">Позиция в блоке</label>
+                    <select id="c-pos">
+                        <option value="1">Любое место (без наценки)</option>
+                        <option value="1.20">Первое место (+ 20%)</option>
+                        <option value="1.15">Второе место (+ 15%)</option>
+                        <option value="1.10">Последнее место (+ 10%)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="calc-actions">
+                <button class="btn btn-danger" onclick="resetCalculator()">Сброс всех расчетов</button>
+                <button class="btn" onclick="addToCalc()">Добавить в расчет</button>
+            </div>
+
+            <div class="memory-wrap">
+                <h4 class="memory-title">Выбранные размещения</h4>
+                <div id="memory-list" class="memory-list">
+                    <!-- Dynamic items will go here -->
+                    <div style="color:var(--text-muted); font-style: italic; padding: 10px 0;">Добавьте радиостанцию для расчета...</div>
+                </div>
+                
+                <div class="calc-total">
+                    <div class="total-label">Общая сумма:</div>
+                    <div class="total-sum" id="total-sum">0 ₽</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="company-info">
+            <strong>ООО «До Мажор»</strong><br/>
+            г. Новый Уренгой, ЯНАО, Тюменская обл.<br/>
+            8-932-055-01-61  |  8 (3494) 26-10-33<br/>
+            e-mail: rrmajor@mail.ru<br/><br/>
+            <em>Все цены указаны без НДС.</em>
+        </div>
+
     </div>
-  </div>
 
-  <!-- ══ FOOTER ══ -->
-  <footer>
-    <b>ООО «До Мажор»</b> | г. Новый Уренгой, ЯНАО, Тюменская обл.
-    <div class="contacts">
-      <a href="tel:+79320550161">8-932-055-01-61</a>
-      <a href="tel:+73494261033">8 (3494) 26-10-33</a>
-      <a href="mailto:rrmajor@mail.ru">rrmajor@mail.ru</a>
-    </div>
-    <p style="margin-top:12px;font-size:12px;color:#666;">Без НДС &nbsp;•&nbsp; Действителен с 01.03.2026 по 31.12.2026
-    </p>
-  </footer>
+    <script>
+        const SEC_COST = 6;
+        let calculations = [];
 
-  <script>
-    function resetCalc() {
-      document.getElementById('calc-station').value = '';
-      document.getElementById('calc-duration').value = '30';
-      document.getElementById('calc-per-day').value = '6';
-      document.getElementById('calc-days').value = '30';
-      document.getElementById('calc-position').value = '0';
-      document.getElementById('calc-result').classList.remove('show');
-    }
+        function addToCalc() {
+            const radio = document.getElementById('c-radio').value;
+            const time = parseInt(document.getElementById('c-time').value);
+            const runs = parseInt(document.getElementById('c-runs').value);
+            const days = parseInt(document.getElementById('c-days').value);
+            const posSelect = document.getElementById('c-pos');
+            const posVal = parseFloat(posSelect.value);
+            const posName = posSelect.options[posSelect.selectedIndex].text;
 
-    function showTab(name, btn) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById('tab-' + name).classList.add('active');
-      btn.classList.add('active');
-    }
+            if (isNaN(time) || isNaN(runs) || isNaN(days) || time <= 0 || runs <= 0 || days <= 0) {
+                alert('Пожалуйста, корректно заполните числовые поля.');
+                return;
+            }
 
-    function calculate() {
-      const station = document.getElementById('calc-station').value;
-      const duration = parseFloat(document.getElementById('calc-duration').value) || 0;
-      const perDay = parseFloat(document.getElementById('calc-per-day').value) || 0;
-      const days = parseFloat(document.getElementById('calc-days').value) || 30;
-      const posMult = parseFloat(document.getElementById('calc-position').value) || 0;
+            const itemCost = Math.round(time * SEC_COST * runs * days * posVal);
+            
+            calculations.push({
+                id: Date.now(),
+                radio, time, runs, days, posName, itemCost
+            });
 
-      if (!duration || !perDay) {
-        alert('Пожалуйста, заполните все поля.');
-        return;
-      }
+            renderList();
+        }
 
-      const RATE = 6; // руб за 1 сек
-      const oneExit = duration * RATE;
-      const oneExitPos = oneExit * (1 + posMult);
-      const perMonth = perDay * days;
-      const perDayCost = oneExitPos * perDay;
-      const total = oneExitPos * perMonth;
+        function resetCalculator() {
+            calculations = [];
+            document.getElementById('c-time').value = '';
+            document.getElementById('c-runs').value = '';
+            document.getElementById('c-days').value = '';
+            document.getElementById('c-pos').selectedIndex = 0;
+            renderList();
+        }
 
-      document.getElementById('res-one').textContent = fmt(oneExitPos) + ' ₽';
-      document.getElementById('res-count').textContent = fmt(perMonth) + ' раз';
-      document.getElementById('res-day').textContent = fmt(perDayCost) + ' ₽';
-      document.getElementById('res-total').textContent = fmt(total) + ' ₽';
+        function removeCalc(id) {
+            calculations = calculations.filter(c => c.id !== id);
+            renderList();
+        }
 
-      const stationNames = {
-        rr: 'Русское Радио 103.3 FM',
-        dacha: 'Радио Дача 104.4 FM',
-        love: 'Love Radio 106.9 FM',
-        hit: 'Хит FM 101.8 FM',
-        retro: 'Ретро FM 87.8 FM'
-      };
-      const stName = station ? stationNames[station] : 'не выбрана';
-      const posLabels = { '0': '', '0.2': ', надбавка за 1-е место +20%', '0.15': ', надбавка за 2-е место +15%', '0.1': ', надбавка за последнее место +10%' };
-      const posLabel = posLabels[String(posMult)] || '';
-      document.getElementById('res-note').textContent =
-        `Станция: ${stName} • Хронометраж: ${duration} сек × 6 ₽${posLabel}`;
+        function renderList() {
+            const listEl = document.getElementById('memory-list');
+            const totalEl = document.getElementById('total-sum');
+            
+            if (calculations.length === 0) {
+                listEl.innerHTML = '<div style="color:var(--text-muted); font-style: italic; padding: 10px 0;">Расчеты сброшены. Добавьте радиостанцию для расчета...</div>';
+                totalEl.textContent = '0 ₽';
+                return;
+            }
 
-      document.getElementById('calc-result').classList.add('show');
-    }
+            let total = 0;
+            listEl.innerHTML = '';
+            
+            calculations.forEach(item => {
+                total += item.itemCost;
 
-    function fmt(n) {
-      return Math.round(n).toLocaleString('ru-RU');
-    }
-  </script>
+                const div = document.createElement('div');
+                div.className = 'memory-item';
+                div.innerHTML = `
+                    <div class="memory-item-desc">
+                        <strong>${item.radio}</strong>
+                        ${item.time} сек. • ${item.runs} вых/день • ${item.days} дн. • ${item.posName}
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div class="memory-item-price">${item.itemCost.toLocaleString('ru-RU')} ₽</div>
+                        <button onclick="removeCalc(${item.id})" style="background:none; border:none; color:#fca5a5; cursor:pointer; font-size:1.2rem; outline:none;">&times;</button>
+                    </div>
+                `;
+                listEl.appendChild(div);
+            });
 
+            totalEl.textContent = total.toLocaleString('ru-RU') + ' ₽';
+        }
+    </script>
 </body>
-
 </html>
